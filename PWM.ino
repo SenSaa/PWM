@@ -25,8 +25,7 @@ void PWM() {
         // loop for transition in increments of 2
         for (int dutyCycle = 0 ; dutyCycle <= 255; dutyCycle += 2) {
             // sets the value (range from 0 to 255):
-            //analogWrite(ledPin, dutyCycle);
-            OCR4A = dutyCycle;  // set PWM duty cycle
+            OCR4A = dutyCycle;  // set PWM duty cycle -> Equivalent to "analogWrite(ledPin, dutyCycle)"
             delay(40);  // Use delay for a smoothing transition
         }
 
@@ -34,7 +33,7 @@ void PWM() {
         for (int dutyCycle = 255 ; dutyCycle >= 0; dutyCycle -= 2) {
             // sets the duty cycle value (range from 0 to 255):
             //analogWrite(ledPin, dutyCycle);
-            OCR4A = dutyCycle; // set PWM duty cycle
+            OCR4A = dutyCycle; // set PWM duty cycle -> Equivalent to "analogWrite(ledPin, dutyCycle)"
             // Use delay for a smoothing transition
             delay(40);  // Use delay for a smoothing transition
         }
